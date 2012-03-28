@@ -12,8 +12,7 @@
                     .attr('id', 'filebrowser')
                     .after('<a id="fb_link" title="Filebrowser" href="#">Filebrowser</a>');
                 dlg.find('fieldset')
-                    .append('<a id="link_filebrowser"><img id="image_filebrowser" /></a>'
-                            + '<br /><span id="help_filebrowser"></span>');
+                    .append('<a id="link_filebrowser"><img id="image_filebrowser" /></a><br /><span id="help_filebrowser"></span>');
                 dlg.find('#fb_link').click(function() {
                     fb_window = wdw.open(
                         fb_url + '?pop=1',
@@ -24,14 +23,15 @@
                     return false;
                 });
           }
-        }
+        };
 
         $(".WYMEditor").wymeditor({
+            basePath: "/static/wymeditor/",
             updateSelector: "input:submit",
             updateEvent: "click",
-            postInitDialog: wymeditor_filebrowser,
+            //postInitDialog: wymeditor_filebrowser,
             logoHtml: '',
-            skin: 'twopanels',
+            skin: 'django',
             classesItems: [
                 {'name': 'image', 'title': 'DIV: Image w/ Caption', 'expr': 'div'},
                 {'name': 'caption', 'title': 'P: Caption', 'expr': 'p'},
