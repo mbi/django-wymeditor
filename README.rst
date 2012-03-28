@@ -17,7 +17,6 @@ Usage
     from wymeditor.models import WYMEditorField
 
     class SomeModel(models.Model):
-        ...
         an_html_field = WYMEditorField()
 
 * In your ``admin.py``, use ``WYMAdmin`` as the base class instead of ``admin.ModelAdmin`` (or use multiple inheritance and add ``WYMAdmin`` as a mixin)
